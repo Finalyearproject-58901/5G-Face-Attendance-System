@@ -71,7 +71,7 @@ while True:
     ret, frame = cap.read()
     if not ret:
         break
-
+    
     # Process frames selectively to reduce CPU load
     frame_counter += 1
     if frame_counter % skip_frames != 0:
@@ -79,7 +79,7 @@ while True:
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
         continue
-
+    
     now = datetime.datetime.now()
     faces = face_app.get(frame)
 
